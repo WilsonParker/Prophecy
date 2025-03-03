@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f42e15605be0b1aa06557320e63bad3a",
+    "content-hash": "8f4d4f9b0d4147c5f94183cf7a950055",
     "packages": [
         {
             "name": "brick/math",
@@ -1053,6 +1053,88 @@
                 }
             ],
             "time": "2025-02-03T10:55:03+00:00"
+        },
+        {
+            "name": "intervention/zodiac",
+            "version": "5.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/zodiac.git",
+                "reference": "edf51a508414a0a35e5f534021576ff818f6a851"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/zodiac/zipball/edf51a508414a0a35e5f534021576ff818f6a851",
+                "reference": "edf51a508414a0a35e5f534021576ff818f6a851",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/translation": "^10 || ^11 || ^12",
+                "nesbot/carbon": "^2.0 || ^3.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^2",
+                "phpunit/phpunit": "^10.0 || ^11.0 || ^12.0",
+                "slevomat/coding-standard": "~8.0",
+                "squizlabs/php_codesniffer": "^3.8"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Zodiac": "Intervention\\Zodiac\\Laravel\\ZodiacFacade"
+                    },
+                    "providers": [
+                        "Intervention\\Zodiac\\Laravel\\ZodiacServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Zodiac\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@intervention.io",
+                    "homepage": "https://intervention.io/"
+                }
+            ],
+            "description": "Zodiac sign calculator",
+            "homepage": "https://zodiac.intervention.io",
+            "keywords": [
+                "astrology",
+                "birthday",
+                "horoscope",
+                "star sign",
+                "sun sign",
+                "zodiac"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/zodiac/issues",
+                "source": "https://github.com/Intervention/zodiac/tree/5.0.6"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/interventionio",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Intervention",
+                    "type": "github"
+                },
+                {
+                    "url": "https://ko-fi.com/interventionphp",
+                    "type": "ko_fi"
+                }
+            ],
+            "time": "2025-02-15T08:04:46+00:00"
         },
         {
             "name": "laravel/framework",
