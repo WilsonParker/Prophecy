@@ -18,6 +18,7 @@ class ZodiacTest extends TestCase
         {
             $zodiac = Calculator::zodiac('1980-09-15');
             dump($zodiac);
+            $this->assertEquals('virgo', $zodiac->name());
         }
 
         // method takes mixed formats
@@ -43,8 +44,6 @@ class ZodiacTest extends TestCase
             $zodiac = Calculator::zodiac(228268800);
             dump($zodiac);
         }
-
-        $this->assertTrue(true);
     }
 
 }
