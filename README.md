@@ -9,6 +9,8 @@
 
 ## About Prophecy
 
+사용자의 생일을 입력받아 점성술을 이용해 미래를 예측 해줍니다.
+
 ## Library
 - [Intervention/zodiac](https://github.com/Intervention/zodiac)
 - 
