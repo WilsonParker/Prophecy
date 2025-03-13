@@ -19,3 +19,8 @@
 - [ ] 날짜별 행성 위치 수집
 - [ ] 월별 행성 위치 특이점 수집
 - [ ] 점성술 알고리즘 구현
+- [ ] 로컬 LLM 으로 필요 데이터 저장
+  - 아래는 어떠한 significance가 있는지 분석해줄래?
+    Mercury Retrograde (R)   Sagittarius 27°47’
+
+
