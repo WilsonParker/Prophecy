@@ -13,4 +13,9 @@
 
 ## Library
 - [Intervention/zodiac](https://github.com/Intervention/zodiac)
-- 
+
+## Todo
+- [ ] 날짜별 별자리 데이터 수집
+- [ ] 날짜별 행성 위치 수집
+- [ ] 월별 행성 위치 특이점 수집
+- [ ] 점성술 알고리즘 구현
