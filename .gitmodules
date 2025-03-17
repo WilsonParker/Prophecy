@@ -1,0 +1,3 @@
+[submodule "app/Modules/Supports"]
+	path = app/Modules/Supports
+	url = https://github.com/WilsonParker/LaravelSupports
