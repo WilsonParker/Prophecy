@@ -34,25 +34,36 @@ class AstroTest extends TestCase
                         $this->assertEquals('Jan 1, 1900', $dateNode->text());
                         $date = Carbon::createFromFormat('M j, Y', $dateNode->text());
 
-                        $this->assertEquals(1900, $date->year);
-                        $this->assertEquals(1, $date->month);
-                        $this->assertEquals(1, $date->day);
+                        $year = $date->year;
+                        $month = $date->month;
+                        $day = $date->day;
+
+                        $this->assertEquals(1900, $year);
+                        $this->assertEquals(1, $month);
+                        $this->assertEquals(1, $day);
 
                         $this->assertEquals(', 02:56', $timeNode->text());
-
                         $time = Carbon::createFromFormat('h:i', Str::of($timeNode->text())->remove(', '));
-                        $this->assertEquals(2, $time->hour);
-                        $this->assertEquals(56, $time->minute);
+
+                        $hour = $time->hour;
+                        $minute = $time->minute;
+
+                        $this->assertEquals(2, $hour);
+                        $this->assertEquals(56, $minute);
                     }
 
                     {
                         $td = $tdList->eq(1);
-                        $this->assertEquals('Mercury conjunction Node', $td->text());
+                        $description = $td->text();
+                        $this->assertEquals('Mercury conjunction Node', $description);
                     }
 
                     {
                         $td = $tdList->eq(2);
-                        $this->assertEquals('19°09’', $td->text());
+                        $constellation = Str::of($td->filter('img')->attr('alt'))->trim();
+                        $location = $td->text();
+                        $this->assertEquals('Sagittarius', $constellation);
+                        $this->assertEquals('19°09’', $location);
                     }
                 });
     }
