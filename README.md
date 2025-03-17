@@ -14,13 +14,15 @@
 ## Library
 
 - [Intervention/zodiac](https://github.com/Intervention/zodiac)
+- [spatie/crawler](https://github.com/spatie/crawler)
 
 ## Todo
 
-- [ ] 날짜 데이터 생성
+- [X] 날짜 데이터 생성
     - 1900-2100
 - [ ] 날짜별 별자리 데이터 수집
 - [ ] 날짜별 행성 위치 수집
+    - Any Major (0, 90, 120, 180)
 - [ ] 월별 행성 위치 특이점 수집
 - [ ] 점성술 알고리즘 구현
 - [ ] 로컬 LLM 으로 필요 데이터 저장
