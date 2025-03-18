@@ -10,11 +10,11 @@ class DateRepository extends BaseRepository
 {
     public function firstOrFail(int $year, int $month, int $day): Date
     {
-        dump($year, $month, $day);
-        return $this->model->where('year', $year)
-                           ->where('month', $month)
-                           ->where('day', $day)
-                           ->firstOrFail();
+        return $this->getQuery()
+                    ->where('year', $year)
+                    ->where('month', $month)
+                    ->where('day', $day)
+                    ->firstOrFail();
     }
 
     public function store(int $year, int $month, int $day): Model

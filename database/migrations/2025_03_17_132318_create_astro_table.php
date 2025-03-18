@@ -18,8 +18,6 @@ return new class extends CreateMigration {
         $table->unsignedTinyInteger('minute')->nullable(false)->comment('minute');
         $table->string('description', 64)->nullable(false)->comment('description');
         $table->string('motion', 32)->nullable(false)->comment('motion');
-
-        $table->unique(['date_id', 'hour', 'minute']);
     }
 
     protected function defaultDownTemplate(Blueprint $table): void

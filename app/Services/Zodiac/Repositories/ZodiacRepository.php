@@ -9,6 +9,6 @@ class ZodiacRepository extends BaseRepository
 {
     public function firstOrFail(string $code): Zodiac
     {
-        return $this->model->findOrFail($code);
+        return $this->getQuery()->findOrFail($code);
     }
 }
