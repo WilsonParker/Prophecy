@@ -34,4 +34,6 @@
       international relationships. 🚀
 - [ ] 점성술 알고리즘 구현
 
-c
+## Ollama
+
+[Ollama](Ollama.md)
