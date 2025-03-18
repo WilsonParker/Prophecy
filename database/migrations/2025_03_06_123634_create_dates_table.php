@@ -14,6 +14,6 @@ return new class extends CreateMigration {
         $table->unsignedTinyInteger('month')->nullable(false)->comment('month');
         $table->unsignedTinyInteger('day')->nullable(false)->comment('day');
 
-        $table->index(['year', 'month', 'day']);
+        $table->unique(['year', 'month', 'day']);
     }
 };

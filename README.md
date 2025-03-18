@@ -14,7 +14,7 @@
 ## Library
 
 - [Intervention/zodiac](https://github.com/Intervention/zodiac)
-- [spatie/crawler](https://github.com/spatie/crawler)
+- [symfony/dom-crawler](https://github.com/symfony/dom-crawler)
 
 ## Todo
 
