@@ -1,28 +1,15 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use LaravelSupports\Database\Migrations\CreateMigration;
 
-return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::create('zodiacs', function (Blueprint $table) {
-            $table->string('code')->primary()->comment('code');
-            $table->string('name', 32)->nullable(false)->comment('별자리 이름');
-            $table->timestamps();
-        });
-    }
+return new class extends CreateMigration {
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    protected string $table = "zodiacs";
+
+    protected function defaultUpTemplate(Blueprint $table): void
     {
-        Schema::dropIfExists('zodiacs');
+        $table->string('code')->primary()->comment('code');
+        $table->string('description', 64)->nullable(false)->comment('설명');
     }
 };
