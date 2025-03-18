@@ -14,7 +14,7 @@
 ## Library
 
 - [Intervention/zodiac](https://github.com/Intervention/zodiac)
-- [spatie/crawler](https://github.com/spatie/crawler)
+- [ollama/ollama](https://github.com/ollama/ollama)
 
 ## Todo
 
@@ -34,4 +34,4 @@
       international relationships. 🚀
 - [ ] 점성술 알고리즘 구현
 
-
+c
