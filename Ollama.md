@@ -7,13 +7,13 @@
 Next, start the server:
 
 ```shell
-./ollama serve
+ollama serve
 ```
 
 Finally, in a separate shell, run a model:
 
 ```shell
-./ollama run llama3.2
+ollama run llama3.2
 ```
 
 # REST API
