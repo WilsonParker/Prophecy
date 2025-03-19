@@ -15,6 +15,7 @@
 
 - [Intervention/zodiac](https://github.com/Intervention/zodiac)
 - [ollama/ollama](https://github.com/ollama/ollama)
+- [symfony/dom-crawler](https://github.com/symfony/dom-crawler)
 
 ## Todo
 
