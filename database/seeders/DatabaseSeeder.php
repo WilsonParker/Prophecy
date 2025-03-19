@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CreateDateSeeder::class,
             CreateZodiacSeeder::class,
+            CreateAstroSeeder::class,
         ]);
     }
 }
