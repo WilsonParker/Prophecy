@@ -14,6 +14,7 @@
 ## Library
 
 - [Intervention/zodiac](https://github.com/Intervention/zodiac)
+- [ollama/ollama](https://github.com/ollama/ollama)
 - [symfony/dom-crawler](https://github.com/symfony/dom-crawler)
 
 ## Todo
@@ -21,7 +22,7 @@
 - [X] 날짜 데이터 생성
     - 1900-2100
 - [ ] 날짜별 별자리 데이터 수집
-- [ ] 날짜별 행성 위치 특이점 수집
+- [X] 날짜별 행성 위치 특이점 수집
     - Any Major (0, 90, 120, 180)
 - [ ] 날짜별 행성 위치 특이점 해석 수집
     - 아래는 어떠한 significance가 있는지 분석해줄래?
@@ -32,6 +33,9 @@
 - [ ] 날짜별 행성 위치 특이점 해석 중 키워드 수집
     - A period of ideological, legal, and global transition, requiring careful reassessment of beliefs, policies, and
       international relationships. 🚀
+- [ ] 날짜별 역사적 사건 데이터 수집
 - [ ] 점성술 알고리즘 구현
 
+## Ollama
 
+[Ollama](Ollama.md)
