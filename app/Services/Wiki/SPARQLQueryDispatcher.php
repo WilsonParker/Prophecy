@@ -33,7 +33,7 @@ WHERE {
   INCLUDE %i
   SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en" . }
 }
-  ORDER BY ?dateTime
+  # ORDER BY ?dateTime
 SPARQL;
 
     /**

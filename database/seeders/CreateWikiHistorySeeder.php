@@ -24,12 +24,15 @@ class CreateWikiHistorySeeder extends Seeder
         $end = Carbon::createFromFormat('Y-m-d', '1900-01-01');
 
         $date = $start;
-        $limit = 200;
+        $limit = 500;
         $offset = 0;
         do {
             $dateModel = $dateService->firstOrFail($date->year, $date->month, $date->day);
+            dump("{$dateModel->getKey()}, $dateModel->year-$dateModel->month-$dateModel->day");
             do {
+                dump("offset: $offset");
                 $result = collect($wikiService->getHistories($date, $limit, $offset));
+                dump("result count : {$result->count()}");
                 $result->each(fn($item) => $wikiService->storeWithItem($dateModel, $item));
                 $offset++;
             } while ($result->count() >= $limit);
