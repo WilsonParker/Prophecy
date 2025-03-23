@@ -16,12 +16,12 @@ return new class extends CreateMigration {
         $table->id();
         $table->foreignIdFor(Date::class)->nullable(false)->comment('date')->constrained()->onDelete('cascade');
         $table->string('event_uri', 256)->nullable(false)->comment('event uri');
-        $table->string('description', 256)->nullable(false)->comment('description');
+        $table->string('label', 256)->nullable(false)->comment('label');
     }
 
     protected function defaultDownTemplate(Blueprint $table): void
     {
-        $table->dropForeignIdFor(Date::class);
+        $table->dropConstrainedForeignIdFor(Date::class);
     }
 
 };
