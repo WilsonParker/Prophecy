@@ -1,0 +1,18 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use LaravelSupports\Database\Migrations\CreateMigration;
+
+return new class extends CreateMigration {
+
+    protected string $table = "{{ table }}";
+
+    /**
+     * Run the migrations.
+     */
+    protected function defaultUpTemplate(Blueprint $table): void
+    {
+        $table->id();
+    }
+
+};
