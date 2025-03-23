@@ -67,6 +67,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(WikiService::class, fn($app) => new WikiService(
             $app->make(SPARQLQueryDispatcher::class),
             $app->make(WikiHistoryRepository::class),
+            $app->make(DateService::class),
         ));
     }
 

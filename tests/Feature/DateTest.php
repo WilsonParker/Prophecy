@@ -31,6 +31,10 @@ class DateTest extends TestCase
 
         $this->assertEquals(2, $hour);
         $this->assertEquals(56, $minute);
+
+        $dateStr = "1900-01-01T00:00:00Z";
+        $date = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', $dateStr);
+        $this->assertEquals('1900-01-01 00:00:00', $date->format('Y-m-d H:i:s'));
     }
 
 }
