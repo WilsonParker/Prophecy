@@ -15,19 +15,32 @@ WITH {
   SELECT DISTINCT ?event ?date
   WHERE {
     # Find events
-    ?event wdt:P31/wdt:P279* wd:Q1190554.
+    
+    # 사건
+    # ?event wdt:P31/wdt:P279* wd:Q1190554.
+    
+    # 역사적 사건
+    ?event wdt:P31/wdt:P279* wd:Q1656682.
+    
     # Events with a point in time or start date
     OPTIONAL { ?event wdt:P585 ?date. }
     OPTIONAL { ?event wdt:P580 ?date. }
+    
     # Ensure at least one date is available
-    FILTER(BOUND(?date) && DATATYPE(?date) = xsd:dateTime).
-    # Filter events in January 2013
+    # FILTER(BOUND(?date) && DATATYPE(?date) = xsd:dateTime).
+    
+    # Filter events in $date
     # FILTER("2013-01-01T00:00:00Z"^^xsd:dateTime <= ?date && ?date < "2013-02-01T23:59:59Z"^^xsd:dateTime).
-    FILTER("$dateT00:00:00Z"^^xsd:dateTime <= ?date && ?date < "$dateT23:59:59Z"^^xsd:dateTime).
+    # FILTER("$dateT00:00:00Z"^^xsd:dateTime <= ?date && ?date <= "$dateT23:59:59Z"^^xsd:dateTime).
+    
+    BIND(STRDT("$dateT00:00:00Z", xsd:dateTime) AS ?startDate)
+    BIND(STRDT("$dateT23:59:59Z", xsd:dateTime) AS ?endDate)
+    FILTER(?startDate <= ?date && ?date <= ?endDate)
+    # FILTER(STRDT("1900-01-06", xsd:dateTime) = ?date)
   }
-  LIMIT $limit
+  # LIMIT $limit
   # 다음 요청에서는 OFFSET 200, 400 등으로 변경
-  OFFSET $offset
+  # OFFSET $offset
 } AS %i
 WHERE {
   INCLUDE %i
