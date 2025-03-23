@@ -45,16 +45,16 @@ SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,
 }
 ```
 
-접두사  wd :  <http://www.wikidata.org/entity/>    
-접두사  wds :  <http://www.wikidata.org/entity/statement/>  
-접두사  wdv :  <http://www.wikidata.org/value/>    
-접두사  wdt :  <http://www.wikidata.org/prop/direct/>  
-접두사  wikibase :  <http://wikiba.se/ontology#>   
-접두사  p :  <http://www.wikidata.org/prop/>   
-접두사  ps :  <http://www.wikidata.org/prop/statement/>    
-접두사  pq :  <http://www.wikidata.org/prop/qualifier/>    
-접두사  rdfs :  <http://www.w3.org/2000/01/rdf-schema#>    
-접두사  bd :  <http://www.bigdata.com/rdf#>    
+접두사 wd :  <http://www.wikidata.org/entity/>    
+접두사 wds :  <http://www.wikidata.org/entity/statement/>  
+접두사 wdv :  <http://www.wikidata.org/value/>    
+접두사 wdt :  <http://www.wikidata.org/prop/direct/>  
+접두사 wikibase :  <http://wikiba.se/ontology#>   
+접두사 p :  <http://www.wikidata.org/prop/>   
+접두사 ps :  <http://www.wikidata.org/prop/statement/>    
+접두사 pq :  <http://www.wikidata.org/prop/qualifier/>    
+접두사 rdfs :  <http://www.w3.org/2000/01/rdf-schema#>    
+접두사 bd :  <http://www.bigdata.com/rdf#>
 
 ```
 # 아래 SELECT 쿼리는 다음을 수행합니다. 
@@ -82,4 +82,29 @@ SELECT  DISTINCT  *  WHERE  {
   BIND ( wikibase : decodeUri ( STR ( ?webRaw ))  AS  ?webString )  . 
 } 
 LIMIT  20
+```
+
+특정 날짜 출력 쿼리
+
+```
+SELECT ?event ?eventLabel ?date
+WITH {
+  SELECT DISTINCT ?event ?date
+  WHERE {
+    # Find events
+    ?event wdt:P31/wdt:P279* wd:Q1190554.
+    # Events with a point in time or start date
+    OPTIONAL { ?event wdt:P585 ?date. }
+    OPTIONAL { ?event wdt:P580 ?date. }
+    # Ensure at least one date is available
+    FILTER(BOUND(?date) && DATATYPE(?date) = xsd:dateTime).
+    # Filter events in January 2013
+    FILTER("2013-01-01T00:00:00Z"^^xsd:dateTime <= ?date && ?date < "2013-02-01T00:00:00Z"^^xsd:dateTime).
+  }
+  LIMIT 150
+} AS %i
+WHERE {
+  INCLUDE %i
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,en" . }
+}
 ```

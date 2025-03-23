@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             CreateDateSeeder::class,
             CreateZodiacSeeder::class,
             CreateAstroSeeder::class,
+            CreateWikiHistorySeeder::class,
         ]);
     }
 }
