@@ -25,3 +25,5 @@ SQL이나 Pandas 같은 데이터 분석 도구를 활용해서 테이블을 구
 천문 데이터는 오픈소스에서 가져올 수 있음.
 해석 데이터는 기존 베다 점성술 프로그램을 분석하거나, 전통적인 점성술 공식을 코드로 변환해야 함.
 자동화된 테이블로 정리하려면 Python 등의 프로그래밍이 필요함.
+
+[Birth Chart](https://horoscopes.astro-seek.com/calculate-birth-chart-horoscope-online/?input_natal=1&send_calculation=1&narozeni_den=1&narozeni_mesic=1&narozeni_rok=2025&narozeni_hodina=00&narozeni_minuta=00&narozeni_sekunda=00&narozeni_city=Seoul%2C+South+Korea&narozeni_mesto_hidden=Seoul&narozeni_stat_hidden=KR&narozeni_podstat_kratky_hidden=&narozeni_sirka_stupne=37&narozeni_sirka_minuty=34&narozeni_sirka_smer=0&narozeni_delka_stupne=126&narozeni_delka_minuty=59&narozeni_delka_smer=0&narozeni_timezone_form=auto&narozeni_timezone_dst_form=auto&house_system=placidus&hid_fortune=1&hid_fortune_check=on&hid_vertex=1&hid_vertex_check=on&hid_chiron=1&hid_chiron_check=on&hid_lilith=1&hid_lilith_check=on&hid_uzel=1&hid_uzel_check=on&tolerance=1&aya=&tolerance_paral=1.2&zmena_nastaveni=1&aktivni_tab=&nick=Sun+enters+Aquarius&hide_aspects=0&dominanta_metoda=1&dominanta_rulership=1#tabs_redraw)
