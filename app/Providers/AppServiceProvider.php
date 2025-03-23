@@ -11,6 +11,8 @@ use App\Services\Astrology\Contracts\AstrologyContract;
 use App\Services\Astrology\Repositories\AstroRepository;
 use App\Services\Date\DateService;
 use App\Services\Date\Repositories\DateRepository;
+use App\Services\Wiki\SPARQLQueryDispatcher;
+use App\Services\Wiki\WikiService;
 use App\Services\Zodiac\Repositories\ZodiacRepository;
 use App\Services\Zodiac\ZodiacService;
 use Illuminate\Support\ServiceProvider;
@@ -25,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
         $this->registerDate();
         $this->registerZodiac();
         $this->registerAstrology();
+        $this->registerWiki();
     }
 
     private function registerDate(): void
@@ -53,6 +56,12 @@ class AppServiceProvider extends ServiceProvider
             $app->make(DateService::class),
             $app->make(ZodiacService::class),
         ));
+    }
+
+    private function registerWiki(): void
+    {
+        $this->app->singleton(SPARQLQueryDispatcher::class, fn($app) => new SPARQLQueryDispatcher());
+        $this->app->singleton(WikiService::class, fn($app) => new WikiService($app->make(SPARQLQueryDispatcher::class)));
     }
 
     /**

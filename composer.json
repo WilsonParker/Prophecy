@@ -31,7 +31,8 @@
       "Database\\Factories\\": "database/factories/",
       "Database\\Seeders\\": "database/seeders/",
       "LaravelSupports\\Database\\": "app/Modules/Supports/Database/src/",
-      "LaravelSupports\\Models\\": "app/Modules/Supports/Models/src/"
+      "LaravelSupports\\Models\\": "app/Modules/Supports/Models/src/",
+      "LaravelSupports\\Objects\\": "app/Modules/Supports/Objects/src/"
     }
   },
   "autoload-dev": {
