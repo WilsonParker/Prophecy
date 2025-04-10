@@ -16,6 +16,7 @@
 - [Intervention/zodiac](https://github.com/Intervention/zodiac)
 - [ollama/ollama](https://github.com/ollama/ollama)
 - [symfony/dom-crawler](https://github.com/symfony/dom-crawler)
+- [barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)
 
 ## Todo
 
@@ -33,7 +34,7 @@
 - [ ] ~~날짜별 행성 위치 특이점 해석 중 키워드 수집~~
     - A period of ideological, legal, and global transition, requiring careful reassessment of beliefs, policies, and
       international relationships. 🚀
-- [ ] 날짜별 역사적 사건 데이터 수집
+- [X] 날짜별 역사적 사건 데이터 수집
 - [ ] 날짜별 행성 위치 데이터 수집
 - [ ] 점성술 알고리즘 구현
 
