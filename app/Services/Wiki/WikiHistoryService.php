@@ -2,7 +2,7 @@
 
 namespace App\Services\Wiki;
 
-use App\Events\Cache\SetCacheEvent;
+use App\Events\Cache\SetWikiHistoryCacheEvent;
 use App\Services\Wiki\Repositories\WikiHistoryRepository;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Redis;
@@ -23,12 +23,9 @@ class WikiHistoryService
             return collect(json_decode($cached, true));
         }
 
-        // Redis에 없으면 DB에서 검색
-        $result = $this->wikiHistoryRepository->search($keyword);
+        SetWikiHistoryCacheEvent::dispatch($cacheKey);
 
-        SetCacheEvent::dispatch($cacheKey, $result);
-
-        return $result;
+        return $this->wikiHistoryRepository->search($keyword);
     }
 
 }

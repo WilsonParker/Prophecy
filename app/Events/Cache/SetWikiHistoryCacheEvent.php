@@ -6,14 +6,14 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class SetCacheEvent
+class SetWikiHistoryCacheEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     /**
      * Create a new event instance.
      */
-    public function __construct(public string $key, public string $data) {}
+    public function __construct(public string $key) {}
 
     /**
      * Get the channels the event should broadcast on.
