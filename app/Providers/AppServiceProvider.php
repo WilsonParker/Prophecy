@@ -14,6 +14,7 @@ use App\Services\Date\DateService;
 use App\Services\Date\Repositories\DateRepository;
 use App\Services\Wiki\Repositories\WikiHistoryRepository;
 use App\Services\Wiki\SPARQLQueryDispatcher;
+use App\Services\Wiki\WikiHistoryService;
 use App\Services\Wiki\WikiService;
 use App\Services\Zodiac\Repositories\ZodiacRepository;
 use App\Services\Zodiac\ZodiacService;
@@ -64,10 +65,15 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton(SPARQLQueryDispatcher::class, fn($app) => new SPARQLQueryDispatcher());
         $this->app->singleton(WikiHistoryRepository::class, fn($app) => new WikiHistoryRepository(WikiHistory::class));
+
         $this->app->singleton(WikiService::class, fn($app) => new WikiService(
             $app->make(SPARQLQueryDispatcher::class),
             $app->make(WikiHistoryRepository::class),
             $app->make(DateService::class),
+        ));
+
+        $this->app->singleton(WikiHistoryService::class, fn($app) => new WikiHistoryService(
+            $app->make(WikiHistoryRepository::class),
         ));
     }
 

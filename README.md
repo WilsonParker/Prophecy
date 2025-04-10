@@ -16,6 +16,7 @@
 - [Intervention/zodiac](https://github.com/Intervention/zodiac)
 - [ollama/ollama](https://github.com/ollama/ollama)
 - [symfony/dom-crawler](https://github.com/symfony/dom-crawler)
+- [barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)
 
 ## Todo
 
