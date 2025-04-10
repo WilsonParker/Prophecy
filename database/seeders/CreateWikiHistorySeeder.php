@@ -15,9 +15,8 @@ class CreateWikiHistorySeeder extends Seeder
     {
         $wikiService = app()->make(WikiService::class);
 
-        // $start = Carbon::createFromFormat('Y', '1900');
-        $start = Carbon::createFromFormat('Y', '2084');
-        $end = Carbon::createFromFormat('Y', '2100');
+        $start = Carbon::createFromFormat('Y', '1900');
+        $end = Carbon::createFromFormat('Y', 's2100');
 
         $date = $start;
 
